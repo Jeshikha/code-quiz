@@ -5,31 +5,43 @@ let timerID;
 
 // html elements
 let questionsElement = document.getElementById("questions");
-let timeElement = document.getElementById("time");
+let timerElement = document.getElementById("time");
 let choicesElement = document.getElementById("choices");
 let submitButton = document.getElementById("submit");
 let startButton = document.getElementById("start");
-let initialElement = document.getElementById("initials");
-let feedBackElement = document.getElementById("feedback");
+let initialsElement = document.getElementById("initials");
+let feedbackElement = document.getElementById("feedback");
 let sfxRight = new Audio("assets/sfx/correct.wav");
 let sfxWrong = new Audio("assets/sfx/incorrect.wav");
+
+
 
 function getQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let titleElement = document.getElementById("question-title");
+
     titleElement.textContent = currentQuestion.title;
-    choicesElement.innerHTML = "";
+
+    choicesElement.innerHTML = ""; // Clear previous choices
+
     currentQuestion.choices.forEach(function (choice, index) {
         let choiceButton = document.createElement("button");
+
         choiceButton.setAttribute("class", "choice");
         choiceButton.setAttribute("value", choice);
 
         choiceButton.textContent = `${index + 1}. ${choice}`;
-        choiceButton.addEventListener("click", questionClick);
-        choicesElement.append(choiceButton)
+        choiceButton.classList.add("choice");
 
-    })
+
+        // Attach click event to the choice button
+        choiceButton.addEventListener("click", questionClick);
+
+        choicesElement.appendChild(choiceButton);
+    });
+
 }
+
 
 function questionClick() {
     if (this.value !== questions[currentQuestionIndex].answer) {
@@ -38,16 +50,17 @@ function questionClick() {
             time = 0
         }
         timerElement.textContent = time;
-        feedBackElement.textContent = "Wrong";
+        feedbackElement.textContent = "Wrong";
         sfxWrong.play();
+
     } else {
         sfxRight.play();
-        feedBackElement.textContent = "Correct!";
+        feedbackElement.textContent = "Correct!";
 
     }
-    feedBackElement.setAttribute("class", "feedback");
+    feedbackElement.setAttribute("class", "feedback");
     setTimeout(function () {
-        feedBackElement.setAttribute("class", "feedback hide")
+        feedbackElement.setAttribute("class", "feedback hide")
     }, 1000);
     currentQuestionIndex++;
     if (currentQuestionIndex === questions.length) {
@@ -56,6 +69,15 @@ function questionClick() {
         getQuestion();
     }
 
+}
+// time 
+function clockTick() {
+    time--;
+    timerElement.textContent = time;
+
+    if (time <= 0) {
+        quizEnd();
+    }
 }
 
 function quizEnd() {
@@ -68,29 +90,20 @@ function quizEnd() {
     questionsElement.setAttribute("class", "hide");
 }
 
-// time 
-function clockTick() {
-    time--;
-    timerElement.textContent = time;
-
-    if (time <= 0) {
-        quizEnd();
-    }
-}
-
-
 
 // Function to start the quiz
 function startQuiz() {
-    startButton.classList.add("hide");
-    questionsElement.classList.remove("hide");
-    timerID = setInterval(clockTick, 1000);
+    let startScreenElement = document.getElementById("start-screen");
+    startScreenElement.setAttribute("class", "hide");
 
-    displayQuestion();
+    questionsElement.removeAttribute("class");
+    timerID = setInterval(clockTick, 1000);
+    timerElement.textContent = time;
+    getQuestion();
 }
 
 function saveHighScore() {
-    let initials = initialElement.value.trim();
+    let initials = initialsElement.value.trim();
 
     if (initials !== "") {
         let highScores = JSON.parse(localStorage.getItem("highscores")) || [];
@@ -113,7 +126,5 @@ function checkForEnter(event) {
 }
 
 startButton.addEventListener("click", startQuiz);
-
 submitButton.addEventListener("click", saveHighScore);
-
-initialElement.addEventListener("keyup", checkForEnter);
+initialsElement.addEventListener("keyup", checkForEnter);
