@@ -1,9 +1,9 @@
-
+// creating set of questions and choices, with correct answers
 let questions = [
     {
-        title: "What does the acronym 'CSS' stand for?",
-        choices: ["Counter Styling Sheet", "Computer Style Sheet", "Cascading Style Sheet", "Central Styling Syntax"],
-        answer: "Cascading Style Sheet",
+        title: "In CSS, what property is used to control the spacing between elements on the same line?",
+        choices: ["margin", "padding", "border", "spacing"],
+        answer: "margin",
         userAnswer: null // Initialize userAnswer as null
     },
     {
@@ -25,9 +25,10 @@ let questions = [
         userAnswer: null
     },
     {
-        title: "How can you comment out multiple lines in JavaScript?",
-        choices: ["/* This is a comment */", "<!-- This is a comment -->", "// This is a comment //", "# This is a comment #"],
-        answer: "/* This is a comment */",
+        title: "Which JavaScript method is used to add an element to the end of an array?",
+        choices: [".push()", ".pop()", ".shift()", ".unshift()"],
+        answer: ".push()",
         userAnswer: null
     }
 ];
+

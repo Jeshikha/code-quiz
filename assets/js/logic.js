@@ -131,8 +131,10 @@ function saveHighScore() {
 
     if (initials !== "") { // verifies that the user has entered some initials.
         let highScores = JSON.parse(localStorage.getItem("highscores")) || []; // retrieves the high scores from the local storage
+        let correctAnswers = calculateCorrectAnswers();
+        let score = correctAnswers * 100 + time; // Calculate the score
         let newScore = {
-            score: time,
+            score: score,
             initials: initials
         } // a new score object is created with two properties: score + the remaining time and initials (the user's initials).
         highScores.push(newScore); // new score is added to the highScores array.
