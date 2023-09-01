@@ -1,6 +1,7 @@
-let currentQuestionIndex = 0;
+let currentQuestionIndex = 0;// This line declares a variable called currentQuestionIndex and initializes it to 0. This variable will keep track of the index of the current question being displayed.
 let time = questions.length * 15;
-let timerID;
+// calculating the total time for the quiz by multiplying the number of questions in the questions array by 15 seconds. This variable is used to display the remaining time during the quiz.
+let timerID;// Storing the ID of the interval timer that counts down the time.
 
 
 // html elements
@@ -44,6 +45,9 @@ function getQuestion() {
 
 
 function questionClick() {
+    let selectedAnswer = this.value;
+    questions[currentQuestionIndex].userAnswer = selectedAnswer; // Update userAnswer
+
     if (this.value !== questions[currentQuestionIndex].answer) {
         time -= 15;
         if (time < 0) {
@@ -70,6 +74,33 @@ function questionClick() {
     }
 
 }
+function calculateCorrectAnswers() {
+    let correctAnswers = 0;
+
+    for (let i = 0; i < questions.length; i++) {
+        if (questions[i].userAnswer === questions[i].answer) {
+            correctAnswers++;
+        }
+    }
+
+    return correctAnswers;
+}
+
+
+function quizEnd() {
+    clearInterval(timerID);
+    let endScreenElement = document.getElementById("end-screen");
+    endScreenElement.removeAttribute("class");
+    let finalScoreElement = document.getElementById("final-score");
+
+    let correctAnswers = calculateCorrectAnswers(); // Use the calculateCorrectAnswers function
+    let score = correctAnswers * 100 + time; // Each correct answer scores 100, and add the remaining time as bonus
+
+    finalScoreElement.textContent = score;
+
+    questionsElement.setAttribute("class", "hide");
+}
+
 // time 
 function clockTick() {
     time--;
@@ -78,16 +109,6 @@ function clockTick() {
     if (time <= 0) {
         quizEnd();
     }
-}
-
-function quizEnd() {
-    clearInterval(timerID);
-    let endSreenElement = document.getElementById("end-screen");
-    endSreenElement.removeAttribute("class");
-    let finalScoreElement = document.getElementById("final-score");
-    finalScoreElement.textContent = time;
-
-    questionsElement.setAttribute("class", "hide");
 }
 
 
