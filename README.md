@@ -98,7 +98,7 @@ The following imageS show the web application's Coding Quiz and output through f
 ![wrong input](assets/images/wrong.jpeg)
 
 * Choosing Correct Answer Notification
-![Correct Answer](assets/images/.right.jpeg)
+![Correct Answer](assets/images/right.jpeg)
 
 * Quiz Ending and Total Score - Prompting for Intials to log data
 ![total score and prompting initials](assets/images/final.png)
