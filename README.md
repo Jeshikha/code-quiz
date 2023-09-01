@@ -89,26 +89,26 @@ This project is licensed under the MIT License.
 The following imageS show the web application's Coding Quiz and output through formula:
 
 * Webpage opening - Start Quiz
-![opening the code in the browser to start quiz](images/Start.png)
+![opening the code in the browser to start quiz](assets/images/Start.png)
 
 * Multiple Choice Questions and Count starts/ Timer is On
-![MCQ and timer](images/question.png)
+![MCQ and timer](assets/images/question.png)
 
 * Choosing Wrong Answer Notification
-![wrong input](images/wrong.jpeg)
+![wrong input](assets/images/wrong.jpeg)
 
 * Choosing Correct Answer Notification
-![Correct Answer](images/.right.jpeg)
+![Correct Answer](assets/images/.right.jpeg)
 
 * Quiz Ending and Total Score - Prompting for Intials to log data
-![total score and prompting initials](images/final.png)
+![total score and prompting initials](assets/images/final.png)
 
 * Highscores of users are listed and sorted from highest to lowest.
-![Highscores are sorted from highest to lowest](images/total.png)
+![Highscores are sorted from highest to lowest](assets/images/total.png)
 
 * Clearing Highscores and no data left
-![Clearing Highscores](images/highscore.png)
+![Clearing Highscores](assets/images/highscore.png)
 
 * Inspecting Local Storage Application
-![Inspecting Local Storage Application](images/appli.png)
+![Inspecting Local Storage Application](assets/images/appli.png)
 
