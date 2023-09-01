@@ -81,9 +81,34 @@ The "Coding Quiz Challenge" project is a fully functional and engaging web appli
 This project is licensed under the MIT License.
 
 ## Deployment - Useful Links to facilitate viewing of project
-• The URL of the GitHub repository: 
+• The URL of the GitHub repository: https://github.com/Jeshikha/code-quiz
 
 • The URL of the functional, deployed application on GitHub Pages: 
 
 ## Screenshots of Deployed App
 The following imageS show the web application's Coding Quiz and output through formula:
+
+* Webpage opening - Start Quiz
+![opening the code in the browser to start quiz](images/Start.png)
+
+* Multiple Choice Questions and Count starts/ Timer is On
+![MCQ and timer](images/question.png)
+
+* Choosing Wrong Answer Notification
+![wrong input](images/wrong.jpeg)
+
+* Choosing Correct Answer Notification
+![Correct Answer](images/.right.jpeg)
+
+* Quiz Ending and Total Score - Prompting for Intials to log data
+![total score and prompting initials](images/final.png)
+
+* Highscores of users are listed and sorted from highest to lowest.
+![Highscores are sorted from highest to lowest](images/total.png)
+
+* Clearing Highscores and no data left
+![Clearing Highscores](images/highscore.png)
+
+* Inspecting Local Storage Application
+![Inspecting Local Storage Application](images/appli.png)
+
