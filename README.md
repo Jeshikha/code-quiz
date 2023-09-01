@@ -49,9 +49,9 @@ Sound effects for correct and incorrect answers, enhancing the gaming experience
 - **Clear High Scores:** 
 Users have the option to clear high scores and start fresh.
 - **Local Storage:** 
-- Store High Scores: After completing the quiz, user initials and scores are saved in Local Storage, enabling users to track and compare their performance. 
-- Retrieve High Scores: On the "Highscores" page, high scores are retrieved from Local Storage and displayed in a leaderboard format.
-- Clear High Scores: Users can choose to clear their high scores, removing the data from Local Storage.
+    - Store High Scores: After completing the quiz, user initials and scores are saved in Local Storage, enabling users to track and compare their performance. 
+    - Retrieve High Scores: On the "Highscores" page, high scores are retrieved from Local Storage and displayed in a leaderboard format.
+    - Clear High Scores: Users can choose to clear their high scores, removing the data from Local Storage.
 
 ## Files Created
 The project includes the following files:
@@ -83,7 +83,8 @@ This project is licensed under the MIT License.
 ## Deployment - Useful Links to facilitate viewing of project
 • The URL of the GitHub repository: https://github.com/Jeshikha/code-quiz
 
-• The URL of the functional, deployed application on GitHub Pages: 
+• The URL of the functional, deployed application on GitHub Pages: https://jeshikha.github.io/code-quiz/    
+
 
 ## Screenshots of Deployed App
 The following imageS show the web application's Coding Quiz and output through formula:
