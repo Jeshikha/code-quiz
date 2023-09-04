@@ -61,6 +61,8 @@ function questionClick() {
     } else {
         sfxRight.play(); // Plays a correct sound.
         feedbackElement.textContent = "Correct!"; // Displays "Correct!" in the feedback element.
+        time += 15; // Add 15 seconds for a correct answer
+        timerElement.textContent = time;
 
     }
     feedbackElement.setAttribute("class", "feedback");
@@ -96,7 +98,7 @@ function quizEnd() {
     let finalScoreElement = document.getElementById("final-score");
 
     let correctAnswers = calculateCorrectAnswers(); // Use the calculateCorrectAnswers function
-    let score = correctAnswers * 100 + time; // computing the score by multiplying the number of correct answers by 100 (assuming each correct answer scores 100 points) and adding the remaining time as a bonus.
+    let score = time; // computing the score the remaining time
 
     finalScoreElement.textContent = score; // HTML element with the ID "final-score" to display the calculated score
 
@@ -132,7 +134,7 @@ function saveHighScore() {
     if (initials !== "") { // verifies that the user has entered some initials.
         let highScores = JSON.parse(localStorage.getItem("highscores")) || []; // retrieves the high scores from the local storage
         let correctAnswers = calculateCorrectAnswers();
-        let score = correctAnswers * 100 + time; // Calculate the score
+        let score = time; // Calculate the score
         let newScore = {
             score: score,
             initials: initials

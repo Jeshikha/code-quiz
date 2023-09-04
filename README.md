@@ -1,7 +1,7 @@
 # Coding Quiz Challenge
 
 ## Overview
-The Coding Quiz Challenge is a web-based application that I developed to offer users a timed quiz on JavaScript, HTML and CSS fundamentals while also enabling the storage of high scores. This project was a significant step in applying the knowledge gained in a coding boot camp to a real-world scenario. This project features a dynamic and responsive user interface powered by HTML, CSS, and JavaScript. It follows the structure and principles of a typical coding assessment, offering a combination of multiple-choice questions and interactive coding challenges. The quiz is timed, and incorrect answers lead to time deductions, simulating the conditions of a real coding challenge. Each correct answers will score the candidate 100 points. The challenge was multifaceted, requiring the implementation of features such as a timer, multiple-choice questions, score calculation, and local storage usage. This hands-on experience led to a deeper understanding of event listeners, HTML element manipulation, and the overall flow of functions in a web application. It was an opportunity to overcome obstacles and gain practical insights into front-end web development.
+The Coding Quiz Challenge is a web-based application that I developed to offer users a timed quiz on JavaScript, HTML and CSS fundamentals while also enabling the storage of high scores. This project was a significant step in applying the knowledge gained in a coding boot camp to a real-world scenario. This project features a dynamic and responsive user interface powered by HTML, CSS, and JavaScript. It follows the structure and principles of a typical coding assessment, offering a combination of multiple-choice questions and interactive coding challenges. The quiz is timed, and incorrect answers lead to time deductions, simulating the conditions of a real coding challenge. Each correct answers will add 15 seconds to the candidate's time and time remaining will be the end score. The challenge was multifaceted, requiring the implementation of features such as a timer, multiple-choice questions, score calculation, and local storage usage. This hands-on experience led to a deeper understanding of event listeners, HTML element manipulation, and the overall flow of functions in a web application. It was an opportunity to overcome obstacles and gain practical insights into front-end web development.
 
 ## Project Details
 
@@ -17,15 +17,15 @@ A timer will begin counting down from a set time, giving you a time limit for ea
 Incorrect answers will deduct 15 seconds from your remaining time.
 #### Feedback:
 After answering, you'll receive immediate feedback on whether your answer was correct or not.
-Correct answers trigger a "Correct!" message, 100 points and a sound effect.
-Incorrect answers trigger a "Wrong" message and a time deduction.
+Correct answers trigger a "Correct!" message, adds 15 seconds to the timer and a sound effect.
+Incorrect answers trigger a "Wrong" message and a 15 seconds time deduction.
 #### Progress:
 Your progress is tracked by the number of questions you've answered correctly.
 #### Game Over:
 The game ends when you've answered all questions or when the timer reaches zero.
 #### High Score:
 After the game ends, you'll be prompted to enter your initials.
-High scores are calculated based on the number of correct answers and the remaining time (each correct answer is worth 100 points).
+High scores are calculated based on the number of correct answers and the remaining time.
 Your score is saved along with your initials in local storage.
 #### View Highscores:
 You can click on "View Highscores" to see a list of top scores.

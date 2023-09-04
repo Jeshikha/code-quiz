@@ -8,6 +8,7 @@ function printHighScores() { // declaring a function named printHighScores.
 
     let ol = document.getElementById("highscores"); // selects an HTML id "highscores" and stores it in the variable ol. 
     ol.innerHTML = ""; // clears the previous content of the ordered list (<ol>) by setting its innerHTML to an empty string. This is done to remove any previously displayed high scores before updating with the new sorted list.
+
     highScores.forEach(function (score) {// starts a loop that iterates over each score
         let li = document.createElement("li"); // Inside the loop, it creates a new list item (<li>) element for each high score.
         li.textContent = `${score.initials} - ${score.score}`; // setting the text content of the newly created list item to a string that combines the user's initials and their score e.g JR - 200, means JR scored 200
